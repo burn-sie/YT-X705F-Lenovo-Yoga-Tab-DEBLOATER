@@ -23,6 +23,7 @@ if not %surequest%== Y exit
 @echo Deleting.... DONT CLOSE THE WINDOW!!
 @echo off
 adb shell su -c mount --remount / -w
+adb shell su -c mount --remount /vendor -w
 adb shell su -c rm -frR /system/app/Outlook/
 adb shell su -c rm -frR /system/app/YandexSearch/
 adb shell su -c rm -frR /system/app/YandexBrowser/
@@ -52,6 +53,16 @@ adb shell su -c rm -frR /system/priv-app/Podcasts/
 adb shell su -c rm -frR /system/priv-app/KidCtrl/
 adb shell su -c rm -frR /system/app/FT_Terminal_Test/
 adb shell su -c rm -frR /system/priv-app/MultiUserSetting_ROW/
+adb shell su -c rm -frR /vendor/app/LenovoRUStub/
+adb shell su -c rm -frR /vendor/operator/app/AudioBook/
+adb shell su -c rm -frR /system/app/LenovoUserExperience_ROW/
+adb shell su -c rm -frR /system/priv-app/Theme_3.3.20LE/
+adb shell su -c rm -frR /system/priv-app/LSF_DeviceService/
+adb shell su -c rm -frR /system/priv-app/OCZ_ClientDownloader/
+adb shell su -c rm -frR /system/priv-app/OCZ_DeployServiceApp/
+adb shell su -c rm -frR /system/priv-app/StatementService/
+
+
 
 cls
 adb reboot
