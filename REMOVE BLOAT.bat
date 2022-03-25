@@ -12,18 +12,28 @@ echo.
 cls
 
 @echo Sending Super User request. Please Press Grant on the tablet then 
+
+:: The following line unmounts the system partition and remounts it as writable.
 adb shell su -c mount --remount / -w
+
 echo.
+
 cls
+::Another Prompt
 set /P surequest=Did you press the grant button on the tablet?[Y/N]:
 if %surequest%== Y goto DELETE
 if not %surequest%== Y exit
 
+
+
 :DELETE
 @echo Deleting.... DONT CLOSE THE WINDOW!!
 @echo off
+:: The following line unmounts the system and vendor partition and remounts it as writable.
 adb shell su -c mount --remount / -w
 adb shell su -c mount --remount /vendor -w
+
+::The Following starts deleting things aka bloat. Breaks multi user though.
 adb shell su -c rm -frR /system/app/Outlook/
 adb shell su -c rm -frR /system/app/YandexSearch/
 adb shell su -c rm -frR /system/app/YandexBrowser/
