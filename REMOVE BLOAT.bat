@@ -57,25 +57,36 @@ adb shell su -c rm -frR /system/priv-app/LenovoWhatsNewClient/
 adb shell su -c rm -frR /system/priv-app/Podcasts/
 adb shell su -c rm -frR /system/priv-app/KidCtrl/
 
-adb shell su -c rm -frR /system/priv-app/LenovoOTA/LenovoOTA.apk
-adb shell su -c rm -frR /system/priv-app/LSF_LenovoID/LenovoID-Pad-RoW.apk
-adb shell su -c rm -frR /system/priv-app/LSF_DeviceService/lsf_device_V5.0.2.0058trn.apk
-adb shell su -c rm -frR /system/priv-app/OCZ_ClientDownloader/OCZ_ClientDownloader.apk
-adb shell su -c rm -frR /system/priv-app/OCZ_DeployServiceApp/OCZ_DeployServiceApp.apk
-adb shell su -c rm -frR /system/priv-app/SetupWizardExt_ROW/SetupWizardExt_ROW.apk
-adb shell su -c rm -frR /system/priv-app/LenovoWallpaper/LenovoWallpaper.apk
-adb shell su -c rm -frR /system/app/Traceur/Traceur.apk
-adb shell su -c rm -frR /system/app/Midtest/Midtest.apk
-adb shell su -c rm -frR /system/app/ExactCalculator/ExactCalculator.apk
-adb shell su -c rm -frR /vendor/app/LenovoRUStub/LenovoRUStub.apk
-adb shell su -c rm -frR /vendor/app/SSGTelemetryService/SSGTelemetryService.apk
-adb shell su -c rm -frR /vendor/operator/app/AudioBook/audiobook_v1464_2020-07-29_release.apk
+adb shell su -c rm -frR /system/priv-app/LenovoOTA/
+adb shell su -c rm -frR /system/priv-app/LSF_LenovoID/
+adb shell su -c rm -frR /system/priv-app/LSF_DeviceService/
+adb shell su -c rm -frR /system/priv-app/OCZ_ClientDownloader/
+adb shell su -c rm -frR /system/priv-app/OCZ_DeployServiceApp/
+adb shell su -c rm -frR /system/priv-app/SetupWizardExt_ROW/
+adb shell su -c rm -frR /system/priv-app/LenovoWallpaper/
+adb shell su -c rm -frR /system/app/Traceur/
+adb shell su -c rm -frR /system/app/Midtest/
+adb shell su -c rm -frR /system/app/ExactCalculator/
+adb shell su -c rm -frR /vendor/app/LenovoRUStub/
+adb shell su -c rm -frR /vendor/app/SSGTelemetryService/
+adb shell su -c rm -frR /vendor/operator/app/AudioBook/
 adb shell su -c pm uninstall --user 0 com.lct.lottie
 
-cls
+adb shell su -c rm -frR /system/priv-app/Theme_3.3.20LE/
+adb shell su -c rm -frR /system/app/FT_Terminal_Test/
+adb shell su -c rm -frR /system/app/googleassistant_35_alldpi_minSdk21_releasekey/
+adb shell su -c rm -frR /system/app/LenovoUserExperience_ROW/
+adb shell su -c rm -frR /system/product/priv-app/HotwordEnrollmentXGoogleTL3210/
+adb shell su -c rm -frR /system/product/priv-app/HotwordEnrollmentOKGoogleTL3210/
+adb shell su -c rm -frR /data/app/com.google.android.googlequicksearchbox-JtzA2bvJ3OPya6BxcPFuzQ==/
+
 adb reboot
 @echo Tablet restarted, if you ran this script on a fresh reset, the bloat should be gone. 
 @echo If you didnt reset, you can now uninstall bloat apps normally.
+
 @echo To Factory Reset your device, run "fastboot -w" from you computer while in fastboot.
-TIMEOUT /T 10
+
+
+TIMEOUT /T 30
+
 exit
